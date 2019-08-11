@@ -30,14 +30,18 @@ const bowling = {
 	},*/
 	scoreKeeper: function(playCard){
 		for(var ballRoll = 0; ballRoll < playCard.length; ballRoll++){
-			this.score += playCard[ballRoll];
 			if(playCard[ballRoll] === 10){
-				this.score += playCard[ballRoll + 1] + playCard[ballRoll + 2];
+				console.log(playCard[ballRoll]);
+				this.score += 10 + playCard[ballRoll + 1] + playCard[ballRoll + 2];
+			} else if((playCard[ballRoll] + playCard[ballRoll + 1] === 10)){
+				this.score += playCard[ballRoll] + playCard[ballRoll + 2];;
+			}
+			else {
+				this.score += playCard[ballRoll];
 			}
 		}
 		return this.score;
-	}
-
+	},
 }
 
 
