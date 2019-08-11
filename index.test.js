@@ -17,8 +17,12 @@ test("Adds all 1s to equal 20", () => {
 	expect(bowling.scoreKeeper([1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1])).toBe(20);
 });
 
-//test fails when ran, but not when used in sandbox mode  results equal 44
-test("Cann add a strike", () => {
-	expect(bowling.scoreKeeper([10,4,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])).toBe(24);
+//test fails when ran, but not when used in sandbox mode  results equal 48
+test("Can add a strike", () => {
+	expect(bowling.scoreKeeper([0,10,4,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])).toBe(24);
 });
 
+//tests fails when ran, works as expected in sandbox   results in 70
+test("Can add a spare", () => {
+	expect(bowling.scoreKeeper([5,5,3,3,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0])).toBe(22);
+});
